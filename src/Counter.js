@@ -1,4 +1,5 @@
 import React from 'react';
+import './Counter.css';
 import { useReducer } from 'react';
 
  function Counter () {
