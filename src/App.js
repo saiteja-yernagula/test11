@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import React, {useState} from 'react';
+
+
+
+ function App() {
+
+    let [todoInput,settodoInput]=useState("");
+
+    let [todolist,setTodolist]=useState([
+        "learn react", "learn js"
+    ]);
+
+    
+    function addNewTodo(){
+        if(todoInput===""){
+            alert("add some task")
+        }
+        else{
+           let newTodo=[
+                ...todolist ,todoInput
+            ]
+            setTodolist(newTodo);
+            settodoInput("")
+        }
+    }
+
+    function deleteTodo(indexValue){
+       let updatedTodos= todolist.filter((todo,index)=>{
+            return index!==indexValue
+        })
+      
+        setTodolist(updatedTodos)
+
+        
+    }
+
+    return (
+    <div className='todo'>
+      <div className='container pt-5 w-50 '>
+      <h1 className='text-center text-white'>TO DO APP</h1>  
+      <div className='input-group'>
+        <input className='form-control' value={todoInput} onChange={(e)=>{
+            let task=e.target.value;
+            settodoInput(task)
+        }} />
+        <button className='btn btn-light'  onClick={()=>{addNewTodo()}}>ADD</button>
+      </div>
+       
+      <ul className='list-group mt-3'>
+        
+       {
+        todolist.map((u,index)=>{
+          return(
+            <li className='list-group-item' key={index}>
+          <p>{u}  </p>
+          <button onClick={()=>{deleteTodo(index)}}>❌</button>
+          </li>
+          )
+        })
+       }
+      </ul>
     </div>
-  );
-}
 
-export default App;
+    </div>  
+      )
+ }
+
+export default App
+
