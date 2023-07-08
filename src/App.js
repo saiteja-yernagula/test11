@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react';
 import './todo.css'
-import Calculator from './Calculator';
+
 
 
 
@@ -64,9 +64,7 @@ import Calculator from './Calculator';
       </ul>
     </div>
 
-    <div>
-      <Calculator/>
-    </div>
+   
     </div>  
       )
  }
