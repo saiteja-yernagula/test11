@@ -1,6 +1,7 @@
 
 import React, {useState} from 'react';
 import './todo.css'
+import Counter from './Counter';
 
 
 
@@ -38,7 +39,8 @@ import './todo.css'
     }
 
     return (
-    <div className='todo'>
+    <>
+     <div className='todo'>
       <div className='container pt-5 w-50 '>
       <h1 className='text-center text-white'> React TO DO APP</h1>  
       <div className='input-group'>
@@ -65,7 +67,14 @@ import './todo.css'
     </div>
 
    
-    </div>  
+    </div>
+
+    <div>
+      <Counter/>
+    </div>
+    
+    </>  
+     
       )
  }
 
