@@ -1,46 +1,78 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Calculator from './Calculator';
-import Todo from './Todo';
-import Counter from './Counter';
-import Weather from './Weather';
-import Crypto from './Crypto';
-
-import Recipe from './Recipe';
-import Pixabay from './Pixabay';
-import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Search from './Search';
-import Folio from './Folio';
+import React, {useState} from 'react';
+import './todo.css'
 
 
 
-function App (){
-  return (
-    <>
+
+ function App() {
+
+    let [todoInput,settodoInput]=useState("");
+
+    let [todolist,setTodolist]=useState([
+        "learn react", "learn js"
+    ]);
+
     
-    
-    <div>
-    <BrowserRouter>
+    function addNewTodo(){
+        if(todoInput===""){
+            alert("add some task")
+        }
+        else{
+           let newTodo=[
+                ...todolist ,todoInput
+            ]
+            setTodolist(newTodo);
+            settodoInput("")
+        }
+    }
+
+    function deleteTodo(indexValue){
+       let updatedTodos= todolist.filter((todo,index)=>{
+            return index!==indexValue
+        })
+      
+        setTodolist(updatedTodos)
+
         
-         <Routes>
-            <Route path='/' element={<Folio/>}/>
-            <Route path='/gallery' element={<Pixabay/>}/>
-            <Route path='/gallery/search/:gdata' element={<Search/>}/>
-            <Route path='/calculator' element={<Calculator/>}/>
-            <Route path='/weather' element={<Weather/>}/>
-            <Route path='/crpyto' element={<Crypto/>}/>
-            <Route path='/recipe' element={<Recipe/>}/>
-            <Route path='/counter' element={<Counter/>}/>
-            <Route path='/todo' element={<Todo/>}/>
+    }
 
-
-         </Routes>
-    </BrowserRouter>
+    return (
+    <>
+     <div className='todo'>
+      <div className='container pt-5 w-50 '>
+      <h1 className='text-center text-white'> React TO DO APP</h1>  
+      <div className='input-group'>
+        <input className='form-control' value={todoInput} onChange={(e)=>{
+            let task=e.target.value;
+            settodoInput(task)
+        }} />
+        <button className='btn btn-light'  onClick={()=>{addNewTodo()}}>ADD</button>
+      </div>
+       
+      <ul className='list-group mt-3'>
+        
+       {
+        todolist.map((u,index)=>{
+          return(
+            <li className='list-group-item' key={index}>
+          <p>{u}  </p>
+          <button onClick={()=>{deleteTodo(index)}}>❌</button>
+          </li>
+          )
+        })
+       }
+      </ul>
     </div>
-    </>
+
+   
+    </div>
     
-  )
-}
+    
+    </>  
+     
+      )
+ }
 
 export default App
+
