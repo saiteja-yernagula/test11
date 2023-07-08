@@ -5,6 +5,8 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 import Folio from './Folio';
 import Counter from './Counter';
+import Calculator from './Calculator';
+
 
 
 
@@ -16,7 +18,6 @@ function App(){
   return (
     <>
     
-    
     <div>
     <BrowserRouter>
         
@@ -24,8 +25,9 @@ function App(){
             <Route path='/' element={<Folio/>}/>
             <Route path='/counter' element={<Counter/>}/>
 
+            <Route path='/calculator' element={<Calculator/>}/>
 
-         
+
          </Routes>
     </BrowserRouter>
     <Counter/>
