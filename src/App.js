@@ -4,7 +4,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 
 import Newcom from './Newcom';
-import Todo from './Todo';
+import Counter from './Counter';
 
 
 
@@ -22,7 +22,8 @@ function App(){
         
          <Routes>
             <Route path='/' element={<Newcom/>}/>
-            <Route path='/todo' element={<Todo/>}/>
+            <Route path='/counter' element={<Counter/>}/>
+
 
          
          </Routes>
