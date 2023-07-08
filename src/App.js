@@ -23,6 +23,7 @@ function App(){
          <Routes>
             <Route path='/' element={<Newcom/>}/>
             <Route path='/todo' element={<Todo/>}/>
+
          
          </Routes>
     </BrowserRouter>
