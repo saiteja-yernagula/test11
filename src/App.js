@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 
-import Newcom from './Newcom';
+import Folio from './Folio';
 import Counter from './Counter';
 
 
@@ -21,7 +21,7 @@ function App(){
     <BrowserRouter>
         
          <Routes>
-            <Route path='/' element={<Newcom/>}/>
+            <Route path='/' element={<Folio/>}/>
             <Route path='/counter' element={<Counter/>}/>
 
 
