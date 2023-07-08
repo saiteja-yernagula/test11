@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 
-import Todo from './Todo';
 import Newcom from './Newcom';
+import Todo from './Todo';
 
 
 
@@ -21,14 +21,9 @@ function App(){
     <BrowserRouter>
         
          <Routes>
-            <Route path='/' element={<Todo/>}/>
-            <Route path='/todo' element={<Newcom/>}/>
-            
-
-
-            
-
-
+            <Route path='/' element={<Newcom/>}/>
+            <Route path='/todo' element={<Todo/>}/>
+         
          </Routes>
     </BrowserRouter>
     </div>
