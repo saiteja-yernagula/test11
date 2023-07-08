@@ -40,7 +40,7 @@ import './todo.css'
     return (
     <div className='todo'>
       <div className='container pt-5 w-50 '>
-      <h1 className='text-center text-white'>TO DO APP advanced</h1>  
+      <h1 className='text-center text-white'> React TO DO APP</h1>  
       <div className='input-group'>
         <input className='form-control' value={todoInput} onChange={(e)=>{
             let task=e.target.value;
