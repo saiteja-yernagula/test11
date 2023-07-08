@@ -15,7 +15,7 @@ function Pixabay() {
     
       <div>
         <div>
-                <h1>Unsplash</h1>
+                <h1>Unsplash gallery</h1>
                 <h3>The internets source for visuals.</h3>
                 <h3>Powered by creators everywhere.</h3>
                 <form className='input-group  text-center pt-3 pb-3' >
